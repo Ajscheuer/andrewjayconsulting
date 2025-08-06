@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9fafb;
+  --foreground: #374151;
+  --primary: #1e3a8a;
+  --accent: #f97316;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  
+  /* Custom color palette */
+  --color-blue-deep: #1e3a8a;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  --color-blue-900: #1e3a8a;
+  
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  
+  --font-sans: var(--font-nunito-sans), Nunito Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font-nunito), Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced typography for Nunito fonts */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+}
+
+/* Soft, friendly styling for headings */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+/* Body text with slightly increased letter spacing for readability */
+p, span, div {
+  letter-spacing: 0.01em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navigation responsive classes */
+.desktop-nav {
+  display: none;
+}
+
+.mobile-nav-button {
+  display: block;
+}
+
+.desktop-tagline {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: block;
+  }
+  
+  .mobile-nav-button {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-tagline {
+    display: block;
+  }
+}

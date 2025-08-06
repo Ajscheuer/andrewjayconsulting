@@ -1,0 +1,20 @@
+<svg width="550" height="140" viewBox="0 0 550 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="signatureGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-color="#1e3a8a" flood-opacity="0.3"/>
+    </filter>
+    <style>
+      .script { font-family: 'Brush Script MT', cursive; font-size: 112px; font-weight: 400; fill: url(#signatureGradient); }
+      .sans { font-family: 'Inter', sans-serif; font-size: 45px; font-weight: 600; fill: #6b7280; letter-spacing: 3px; }
+    </style>
+  </defs>
+  
+  <!-- Logo Text Elements -->
+  <text x="50" y="70" class="script">Andrew Jay</text>
+  <text x="50" y="120" class="sans">CONSULTING</text>
+</svg> 
