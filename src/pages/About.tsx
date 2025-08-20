@@ -83,7 +83,8 @@ const About: React.FC = () => {
                   <Avatar 
                     size={200} 
                     radius="xl" 
-                    color="gray"
+                    src="/images/headshot.png"
+                    alt="Andrew Jay headshot"
                   />
                   <Stack gap="md" align="center">
                     <Title order={3} ta="center">Andrew Jay</Title>

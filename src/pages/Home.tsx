@@ -246,7 +246,7 @@ const Home: React.FC = () => {
               ))}
             </Grid>
             <Text ta="center" c="gray.6" size="lg" mt="xl">
-              <em>These aren't prototypes — they're practical, time-saving solutions you can deploy today.</em>
+              <em>Built on Microsoft Power Platform for fast, secure rollout in your Microsoft 365 tenant.</em>
             </Text>
           </Stack>
         </Container>
@@ -303,50 +303,7 @@ const Home: React.FC = () => {
         </Container>
       </Box>
 
-      {/* Testimonials Section */}
-      <Box bg="blue.0" py="xl">
-        <Container size="xl">
-          <Stack gap="xl">
-            <Title order={2} ta="center" c="gray.9">
-              What Clients Say
-            </Title>
-            <Grid>
-              <Grid.Col span={{ base: 12, md: 6 }}>
-                <Card shadow="sm" padding="lg" radius="md" withBorder>
-                  <Stack gap="md">
-                    <Text c="gray.6">
-                      &ldquo;Andrew made our internal tools feel 10× smarter — without us having to learn anything new.&rdquo;
-                    </Text>
-                    <Group gap="md">
-                      <Avatar size="md" color="gray" />
-                      <Stack gap={0}>
-                        <Text fw={600} c="gray.9">[Coming soon]</Text>
-                        <Text size="sm" c="gray.6">[Coming soon]</Text>
-                      </Stack>
-                    </Group>
-                  </Stack>
-                </Card>
-              </Grid.Col>
-              <Grid.Col span={{ base: 12, md: 6 }}>
-                <Card shadow="sm" padding="lg" radius="md" withBorder>
-                  <Stack gap="md">
-                    <Text c="gray.6">
-                      &ldquo;The AI integrations he built save us hours every week.&rdquo;
-                    </Text>
-                    <Group gap="md">
-                      <Avatar size="md" color="gray" />
-                      <Stack gap={0}>
-                        <Text fw={600} c="gray.9">[Coming soon]</Text>
-                        <Text size="sm" c="gray.6">[Coming soon]</Text>
-                      </Stack>
-                    </Group>
-                  </Stack>
-                </Card>
-              </Grid.Col>
-            </Grid>
-          </Stack>
-        </Container>
-      </Box>
+      
 
       {/* Lead Magnet Section */}
       <Box bg="white" py="xl">
@@ -398,7 +355,8 @@ const Home: React.FC = () => {
                 <Avatar 
                   size={120} 
                   radius="xl" 
-                  color="gray"
+                  src="/images/headshot.png"
+                  alt="Andrew Jay headshot"
                   style={{ minWidth: 120 }}
                 />
                 <Stack gap="md" style={{ flex: 1 }}>

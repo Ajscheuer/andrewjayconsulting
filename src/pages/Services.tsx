@@ -14,11 +14,6 @@ import {
   ThemeIcon
 } from '@mantine/core';
 import { 
-  IconFileText, 
-  IconSearch, 
-  IconMail, 
-  IconCalendar, 
-  IconClipboardData,
   IconArrowRight,
   IconCheck,
   IconBulb,
@@ -29,7 +24,7 @@ import {
 const Services: React.FC = () => {
   const services = [
     {
-      icon: IconFileText,
+      image: "/images/services/AI Meeting Summaries.jpg",
       title: "AI Meeting Summaries",
       description: "Automatically generate summaries and follow-ups from Teams meetings.",
       features: [
@@ -40,7 +35,7 @@ const Services: React.FC = () => {
       ]
     },
     {
-      icon: IconSearch,
+      image: "/images/services/Document Q&A Bot.jpg",
       title: "Document Q&A Bot",
       description: "A chatbot in Teams that answers questions using your SharePoint content.",
       features: [
@@ -51,7 +46,7 @@ const Services: React.FC = () => {
       ]
     },
     {
-      icon: IconMail,
+      image: "/images/services/Email Assistant.webp",
       title: "Email Assistant",
       description: "Use GPT to auto-draft replies to common types of emails in Outlook.",
       features: [
@@ -62,7 +57,7 @@ const Services: React.FC = () => {
       ]
     },
     {
-      icon: IconCalendar,
+      image: "/images/services/Daily Digest Bot.jpg",
       title: "Daily Digest Bot",
       description: "A morning briefing in Teams showing your day's tasks, meetings, and updates.",
       features: [
@@ -73,7 +68,7 @@ const Services: React.FC = () => {
       ]
     },
     {
-      icon: IconClipboardData,
+      image: "/images/services/Smart Intake Forms.gif",
       title: "Smart Intake Forms",
       description: "Classify, tag, and route Power Apps form submissions intelligently with GPT.",
       features: [
@@ -81,6 +76,39 @@ const Services: React.FC = () => {
         "Automatic data extraction",
         "Intelligent routing and assignment",
         "Integration with existing workflows"
+      ]
+    },
+    {
+      image: "/images/services/Power Apps Custom Business Apps.png",
+      title: "Power Apps: Custom Business Apps",
+      description: "Design and build model-driven or canvas apps tailored to your processes in Microsoft Power Apps.",
+      features: [
+        "Secure Dataverse data models",
+        "Responsive canvas app UX",
+        "Role-based access and governance",
+        "Integration with Teams and SharePoint"
+      ]
+    },
+    {
+      image: "/images/services/Power Automate Workflow Automation.webp",
+      title: "Power Automate: Workflow Automation",
+      description: "Automate approvals, notifications, and data sync across Microsoft 365 and external systems.",
+      features: [
+        "Approval flows with audit trail",
+        "Connectors for M365 and third-party apps",
+        "Error handling and retries",
+        "Run history monitoring and alerts"
+      ]
+    },
+    {
+      image: "/images/services/Power Platform End-to-End Solutions.png",
+      title: "Power Platform: End-to-End Solutions",
+      description: "Solution architecture combining Power Apps, Power Automate, and Dataverse with best practices.",
+      features: [
+        "Environment strategy and ALM",
+        "Managed solutions and pipelines",
+        "Security, DLP, and governance",
+        "Center of Excellence setup guidance"
       ]
     }
   ];
@@ -172,13 +200,23 @@ const Services: React.FC = () => {
                 >
                   <Box 
                     bg="gray.0" 
-                    p="xl" 
-                    style={{ borderRadius: 'var(--mantine-radius-md)' }}
+                    p="xs" 
+                    style={{ 
+                      borderRadius: 'var(--mantine-radius-md)',
+                      overflow: 'hidden',
+                      boxShadow: 'var(--mantine-shadow-sm)'
+                    }}
                     ta="center"
                   >
-                    <ThemeIcon size={80} radius="xl" color="softOrange" variant="light" mx="auto">
-                      <service.icon size={40} />
-                    </ThemeIcon>
+                    <img 
+                      src={service.image}
+                      alt={service.title}
+                      style={{ 
+                        width: '100%', 
+                        height: 'auto',
+                        display: 'block'
+                      }}
+                    />
                   </Box>
                 </Grid.Col>
                 <Grid.Col 
