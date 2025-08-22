@@ -146,7 +146,7 @@ const Services: React.FC = () => {
                 </Text>
                 <Button
                   component="a"
-                  href="https://calendly.com/andrewjay"
+                  href="https://calendly.com/andrew-andrewjayconsulting"
                   target="_blank"
                   rel="noopener noreferrer"
                   size="lg"
@@ -192,81 +192,73 @@ const Services: React.FC = () => {
       <Box bg="white" py="xl">
         <Container size="xl">
           <Stack gap="xl">
-            {services.map((service, index) => (
-              <Grid key={index} align="center" gutter="xl">
-                <Grid.Col 
-                  span={{ base: 12, lg: 6 }} 
-                  order={{ base: 2, lg: index % 2 === 1 ? 1 : 2 }}
+            {services.map((service, index) => {
+              const gradientDirection = index % 2 === 0 ? 'to right' : 'to left';
+              const alignmentStyle = index % 2 === 0 ? { marginLeft: 0, marginRight: 'auto' } : { marginLeft: 'auto', marginRight: 0 };
+              const overlay = index === 0
+                ? `linear-gradient(${gradientDirection}, rgba(11,17,26,0.72) 0%, rgba(11,17,26,0.60) 40%, rgba(11,17,26,0.38) 70%, rgba(11,17,26,0.21) 100%)`
+                : `linear-gradient(${gradientDirection}, rgba(5,8,13,0.82) 0%, rgba(5,8,13,0.78) 35%, rgba(5,8,13,0.75) 60%, rgba(5,8,13,0.71) 100%)`;
+              return (
+                <Box
+                  key={index}
+                  style={{
+                    borderRadius: 'var(--mantine-radius-lg)',
+                    overflow: 'hidden',
+                    backgroundColor: 'var(--mantine-color-gray-9)',
+                    backgroundImage: `${overlay}, url("${service.image}")`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    boxShadow: 'var(--mantine-shadow-md)'
+                  }}
                 >
-                  <Box 
-                    bg="gray.0" 
-                    p="xs" 
-                    style={{ 
-                      borderRadius: 'var(--mantine-radius-md)',
-                      overflow: 'hidden',
-                      boxShadow: 'var(--mantine-shadow-sm)'
-                    }}
-                    ta="center"
-                  >
-                    <img 
-                      src={service.image}
-                      alt={service.title}
-                      style={{ 
-                        width: '100%', 
-                        height: 'auto',
-                        display: 'block'
-                      }}
-                    />
-                  </Box>
-                </Grid.Col>
-                <Grid.Col 
-                  span={{ base: 12, lg: 6 }} 
-                  order={{ base: 1, lg: index % 2 === 1 ? 2 : 1 }}
-                >
-                  <Stack gap="md">
-                    <Title order={2} size="h2" c="gray.9">
-                      {service.title}
-                    </Title>
-                    <Text size="lg" c="gray.6">
-                      {service.description}
-                    </Text>
-                    <List 
-                      spacing="sm"
-                      icon={
-                        <ThemeIcon color="softOrange" size={20} radius="xl">
-                          <IconCheck size={12} />
-                        </ThemeIcon>
-                      }
-                    >
-                      {service.features.map((feature, featureIndex) => (
-                        <List.Item key={featureIndex}>
-                          <Text c="gray.6">{feature}</Text>
-                        </List.Item>
-                      ))}
-                    </List>
-                    <Group mt="md">
-                      <Anchor
-                        href="https://calendly.com/andrewjay"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        c="softOrange"
-                        fw={600}
-                        td="none"
-                        styles={{
-                          root: {
-                            '&:hover': {
-                              color: 'var(--mantine-color-orange-6)',
-                            }
+                  <Box p={{ base: 'lg', md: 'xl' }} style={{ minHeight: 380 }}>
+                    <Box style={{ maxWidth: 720, ...alignmentStyle }}>
+                      <Stack gap="md">
+                        <Title order={2} size="h2" c="gray.0">
+                          {service.title}
+                        </Title>
+                        <Text size="lg" c="gray.2">
+                          {service.description}
+                        </Text>
+                        <List
+                          spacing="sm"
+                          icon={
+                            <ThemeIcon color="softOrange" size={20} radius="xl">
+                              <IconCheck size={12} />
+                            </ThemeIcon>
                           }
-                        }}
-                      >
-                        Let&apos;s discuss this service →
-                      </Anchor>
-                    </Group>
-                  </Stack>
-                </Grid.Col>
-              </Grid>
-            ))}
+                        >
+                          {service.features.map((feature, featureIndex) => (
+                            <List.Item key={featureIndex}>
+                              <Text c="gray.3">{feature}</Text>
+                            </List.Item>
+                          ))}
+                        </List>
+                        <Group mt="md">
+                          <Anchor
+                            href="https://calendly.com/andrew-andrewjayconsulting"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            c="softOrange"
+                            fw={600}
+                            td="none"
+                            styles={{
+                              root: {
+                                '&:hover': {
+                                  color: 'var(--mantine-color-orange-6)'
+                                }
+                              }
+                            }}
+                          >
+                            Let&apos;s discuss this service →
+                          </Anchor>
+                        </Group>
+                      </Stack>
+                    </Box>
+                  </Box>
+                </Box>
+              );
+            })}
           </Stack>
         </Container>
       </Box>
@@ -330,7 +322,7 @@ const Services: React.FC = () => {
             
             <Button
               component="a"
-              href="https://calendly.com/andrewjay"
+              href="https://calendly.com/andrew-andrewjayconsulting"
               target="_blank"
               rel="noopener noreferrer"
               size="lg"

@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               <Group gap="md" mt="xs">
                 <Button
                   component="a"
-                  href="https://calendly.com/andrewjay"
+                  href="https://calendly.com/andrew-andrewjayconsulting"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="softOrange"
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
               <Stack gap={6}>
                 <Anchor component={Link} to="/about" c="gray.4" size="sm">About</Anchor>
                 <Anchor component={Link} to="/contact" c="gray.4" size="sm">Contact</Anchor>
-                <Anchor href="https://calendly.com/andrewjay" target="_blank" rel="noopener noreferrer" c="gray.4" size="sm">Book a Call</Anchor>
+                <Anchor href="https://calendly.com/andrew-andrewjayconsulting" target="_blank" rel="noopener noreferrer" c="gray.4" size="sm">Book a Call</Anchor>
               </Stack>
             </Stack>
           </Grid.Col>

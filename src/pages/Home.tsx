@@ -12,48 +12,107 @@ import {
   Anchor,
   TextInput,
   ThemeIcon,
-  Avatar
+  Avatar,
+  List
 } from '@mantine/core';
 import { 
-  IconFileText, 
-  IconSearch, 
-  IconMail, 
-  IconCalendar, 
-  IconClipboardData,
   IconClock,
   IconBolt,
   IconCircleCheck,
-  IconVideo,
-  IconArrowRight
+  IconArrowRight,
+  IconCheck
 } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const services = [
     {
-      icon: IconFileText,
-      title: "📄 AI Meeting Summaries",
-      description: "Automatically summarize Teams meetings and store follow-ups in SharePoint."
+      image: "/images/services/AI Meeting Summaries.jpg",
+      title: "AI Meeting Summaries",
+      description: "Automatically generate summaries and follow-ups from Teams meetings.",
+      features: [
+        "Automatic transcription and summarization",
+        "Action item extraction and assignment",
+        "SharePoint integration for storage",
+        "Custom formatting and templates"
+      ]
     },
     {
-      icon: IconSearch,
-      title: "🔍 Document Q&A Bot",
-      description: "Ask a chatbot in Teams to retrieve answers from your internal SharePoint docs."
+      image: "/images/services/Document Q&A Bot.jpg",
+      title: "Document Q&A Bot",
+      description: "A chatbot in Teams that answers questions using your SharePoint content.",
+      features: [
+        "Natural language document search",
+        "Integration with SharePoint libraries",
+        "Context-aware responses",
+        "Multi-document analysis"
+      ]
     },
     {
-      icon: IconMail,
-      title: "✉️ Email Assistant",
-      description: "Auto-draft replies to common email types in Outlook using GPT."
+      image: "/images/services/Email Assistant.webp",
+      title: "Email Assistant",
+      description: "Use GPT to auto-draft replies to common types of emails in Outlook.",
+      features: [
+        "Intelligent email categorization",
+        "Auto-draft responses based on context",
+        "Priority email identification",
+        "Data extraction and routing"
+      ]
     },
     {
-      icon: IconCalendar,
-      title: "📅 Daily Digest Bot",
-      description: "A daily Teams message with your schedule, tasks, and document changes."
+      image: "/images/services/Daily Digest Bot.jpg",
+      title: "Daily Digest Bot",
+      description: "A morning briefing in Teams showing your day's tasks, meetings, and updates.",
+      features: [
+        "Personalized daily briefings",
+        "Calendar and task integration",
+        "Priority email summaries",
+        "Customizable report format"
+      ]
     },
     {
-      icon: IconClipboardData,
-      title: "📝 Smart Intake Forms",
-      description: "Use GPT to classify and route form submissions in Power Apps."
+      image: "/images/services/Smart Intake Forms.gif",
+      title: "Smart Intake Forms",
+      description: "Classify, tag, and route Power Apps form submissions intelligently with GPT.",
+      features: [
+        "Dynamic form creation",
+        "Automatic data extraction",
+        "Intelligent routing and assignment",
+        "Integration with existing workflows"
+      ]
+    },
+    {
+      image: "/images/services/Power Apps Custom Business Apps.png",
+      title: "Power Apps: Custom Business Apps",
+      description: "Design and build model-driven or canvas apps tailored to your processes in Microsoft Power Apps.",
+      features: [
+        "Secure Dataverse data models",
+        "Responsive canvas app UX",
+        "Role-based access and governance",
+        "Integration with Teams and SharePoint"
+      ]
+    },
+    {
+      image: "/images/services/Power Automate Workflow Automation.webp",
+      title: "Power Automate: Workflow Automation",
+      description: "Automate approvals, notifications, and data sync across Microsoft 365 and external systems.",
+      features: [
+        "Approval flows with audit trail",
+        "Connectors for M365 and third-party apps",
+        "Error handling and retries",
+        "Run history monitoring and alerts"
+      ]
+    },
+    {
+      image: "/images/services/Power Platform End-to-End Solutions.png",
+      title: "Power Platform: End-to-End Solutions",
+      description: "Solution architecture combining Power Apps, Power Automate, and Dataverse with best practices.",
+      features: [
+        "Environment strategy and ALM",
+        "Managed solutions and pipelines",
+        "Security, DLP, and governance",
+        "Center of Excellence setup guidance"
+      ]
     }
   ];
 
@@ -93,7 +152,7 @@ const Home: React.FC = () => {
                 <Group gap="md">
                   <Button
                     component="a"
-                    href="https://calendly.com/andrewjay"
+                    href="https://calendly.com/andrew-andrewjayconsulting"
                     target="_blank"
                     rel="noopener noreferrer"
                     size="lg"
@@ -192,116 +251,82 @@ const Home: React.FC = () => {
         </Container>
       </Box>
 
-      {/* Quick-Win AI Services Section */}
-      <Box bg="gray.0" py="xl">
+      {/* Services Banners Section */}
+      <Box bg="white" py="xl">
         <Container size="xl">
           <Stack gap="xl">
-            <Title order={2} ta="center" c="gray.9">
-              Quick-Win AI Services
-            </Title>
-            <Grid>
-              {services.map((service, index) => (
-                <Grid.Col key={index} span={{ base: 12, md: 6, lg: 4 }}>
-                  <Card 
-                    shadow="sm" 
-                    padding="lg" 
-                    radius="md" 
-                    withBorder
-                    h="100%"
-                    style={{
-                      transition: 'box-shadow 0.2s ease',
-                      '&:hover': {
-                        boxShadow: 'var(--mantine-shadow-md)',
-                      }
-                    }}
-                  >
-                    <Stack gap="md">
-                      <ThemeIcon size={48} radius="xl" color="softOrange" variant="light">
-                        <service.icon size={24} />
-                      </ThemeIcon>
-                      <Title order={3} size="h4">{service.title}</Title>
-                      <Text c="gray.6" style={{ flexGrow: 1 }}>
-                        {service.description}
-                      </Text>
-                      <Anchor
-                        href="https://calendly.com/andrewjay"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        c="softOrange"
-                        fw={500}
-                        td="none"
-                        styles={{
-                          root: {
-                            '&:hover': {
-                              color: 'var(--mantine-color-orange-6)',
-                            }
+            {services.map((service, index) => {
+              const gradientDirection = index % 2 === 0 ? 'to right' : 'to left';
+              const alignmentStyle = index % 2 === 0 ? { marginLeft: 0, marginRight: 'auto' } : { marginLeft: 'auto', marginRight: 0 };
+              const overlay = index === 0
+                ? `linear-gradient(${gradientDirection}, rgba(11,17,26,0.72) 0%, rgba(11,17,26,0.60) 40%, rgba(11,17,26,0.38) 70%, rgba(11,17,26,0.21) 100%)`
+                : `linear-gradient(${gradientDirection}, rgba(5,8,13,0.82) 0%, rgba(5,8,13,0.78) 35%, rgba(5,8,13,0.75) 60%, rgba(5,8,13,0.71) 100%)`;
+              return (
+                <Box
+                  key={index}
+                  style={{
+                    borderRadius: 'var(--mantine-radius-lg)',
+                    overflow: 'hidden',
+                    backgroundColor: 'var(--mantine-color-gray-9)',
+                    backgroundImage: `${overlay}, url("${service.image}")`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    boxShadow: 'var(--mantine-shadow-md)'
+                  }}
+                >
+                  <Box p={{ base: 'lg', md: 'xl' }} style={{ minHeight: 360 }}>
+                    <Box style={{ maxWidth: 720, ...alignmentStyle }}>
+                      <Stack gap="md">
+                        <Title order={2} size="h2" c="gray.0">
+                          {service.title}
+                        </Title>
+                        <Text size="lg" c="gray.2">
+                          {service.description}
+                        </Text>
+                        <List
+                          spacing="sm"
+                          icon={
+                            <ThemeIcon color="softOrange" size={20} radius="xl">
+                              <IconCheck size={12} />
+                            </ThemeIcon>
                           }
-                        }}
-                      >
-                        Let&apos;s talk →
-                      </Anchor>
-                    </Stack>
-                  </Card>
-                </Grid.Col>
-              ))}
-            </Grid>
-            <Text ta="center" c="gray.6" size="lg" mt="xl">
-              <em>Built on Microsoft Power Platform for fast, secure rollout in your Microsoft 365 tenant.</em>
-            </Text>
+                        >
+                          {service.features.map((feature, featureIndex) => (
+                            <List.Item key={featureIndex}>
+                              <Text c="gray.3">{feature}</Text>
+                            </List.Item>
+                          ))}
+                        </List>
+                        <Group mt="md">
+                          <Anchor
+                            href="https://calendly.com/andrew-andrewjayconsulting"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            c="softOrange"
+                            fw={600}
+                            td="none"
+                            styles={{
+                              root: {
+                                '&:hover': {
+                                  color: 'var(--mantine-color-orange-6)'
+                                }
+                              }
+                            }}
+                          >
+                            Let&apos;s discuss this service →
+                          </Anchor>
+                        </Group>
+                      </Stack>
+                    </Box>
+                  </Box>
+                </Box>
+              );
+            })}
           </Stack>
         </Container>
       </Box>
 
-      {/* Live Demo Section */}
-      <Box bg="white" py="xl">
-        <Container size="xl">
-          <Stack gap="xl">
-            <Stack align="center" gap="md">
-              <Group justify="center" gap="md">
-                <ThemeIcon size={32} radius="xl" color="softOrange" variant="light">
-                  <IconVideo size={18} />
-                </ThemeIcon>
-                <Title order={2} ta="center" c="gray.9">
-                  See It in Action
-                </Title>
-              </Group>
-              <Text size="lg" ta="center" c="gray.6">
-                Watch AI at work in Microsoft 365<br />
-                Real workflows. Real results.
-              </Text>
-            </Stack>
-            <Box
-              style={{
-                borderRadius: 'var(--mantine-radius-lg)',
-                overflow: 'hidden',
-                boxShadow: 'var(--mantine-shadow-lg)'
-              }}
-            >
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=400&fit=crop&auto=format"
-                alt="Team collaborating on AI-powered business solutions"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block'
-                }}
-              />
-            </Box>
-            <Group justify="center">
-              <Button
-                component="a"
-                href="https://calendly.com/andrewjay"
-                target="_blank"
-                rel="noopener noreferrer"
-                color="deepBlue"
-                size="md"
-              >
-                Want something like this? Book a Call
-              </Button>
-            </Group>
-          </Stack>
-        </Container>
-      </Box>
+      
 
       
 

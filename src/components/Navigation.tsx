@@ -91,7 +91,7 @@ const Navigation: React.FC = () => {
               ))}
               <Button
                 component="a"
-                href="https://calendly.com/andrewjay"
+                href="https://calendly.com/andrew-andrewjayconsulting"
                 target="_blank"
                 rel="noopener noreferrer"
                 color="softOrange"
@@ -171,7 +171,7 @@ const Navigation: React.FC = () => {
                 ))}
                 <Button
                   component="a"
-                  href="https://calendly.com/andrewjay"
+                  href="https://calendly.com/andrew-andrewjayconsulting"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="softOrange"
