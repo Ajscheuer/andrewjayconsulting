@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { 
+import React from "react";
+import { Link } from "react-router-dom";
+import {
   Box,
   Container,
   Grid,
@@ -9,8 +9,8 @@ import {
   Text,
   Anchor,
   Divider,
-  Button
-} from '@mantine/core';
+  Button,
+} from "@mantine/core";
 
 const Footer: React.FC = () => {
   return (
@@ -23,11 +23,12 @@ const Footer: React.FC = () => {
                 <img
                   src="/images/andrew-jay-logo.svg"
                   alt="Andrew Jay Consulting"
-                  style={{ height: 36, width: 'auto' }}
+                  style={{ height: 36, width: "auto" }}
                 />
               </Group>
               <Text c="gray.3">
-                Helping small businesses unlock real productivity using AI and Microsoft 365.
+                Helping small businesses unlock real productivity using AI and
+                Microsoft 365.
               </Text>
               <Group gap="md" mt="xs">
                 <Button
@@ -55,24 +56,50 @@ const Footer: React.FC = () => {
 
           <Grid.Col span={{ base: 12, md: 3 }}>
             <Stack gap="sm">
-              <Text fw={600} c="gray.2">Services</Text>
+              <Text fw={600} c="gray.2">
+                Services
+              </Text>
               <Stack gap={6}>
-                <Anchor component={Link} to="/services" c="gray.4" size="sm">AI Meeting Summaries</Anchor>
-                <Anchor component={Link} to="/services" c="gray.4" size="sm">Document Q&A Bot</Anchor>
-                <Anchor component={Link} to="/services" c="gray.4" size="sm">Email Assistant</Anchor>
-                <Anchor component={Link} to="/services" c="gray.4" size="sm">Power Apps</Anchor>
-                <Anchor component={Link} to="/services" c="gray.4" size="sm">Power Automate</Anchor>
+                <Anchor component={Link} to="/services" c="gray.4" size="sm">
+                  AI Meeting Summaries
+                </Anchor>
+                <Anchor component={Link} to="/services" c="gray.4" size="sm">
+                  Document Q&A Bot
+                </Anchor>
+                <Anchor component={Link} to="/services" c="gray.4" size="sm">
+                  Email Assistant
+                </Anchor>
+                <Anchor component={Link} to="/services" c="gray.4" size="sm">
+                  Power Apps
+                </Anchor>
+                <Anchor component={Link} to="/services" c="gray.4" size="sm">
+                  Power Automate
+                </Anchor>
               </Stack>
             </Stack>
           </Grid.Col>
 
           <Grid.Col span={{ base: 12, md: 3 }}>
             <Stack gap="sm">
-              <Text fw={600} c="gray.2">Company</Text>
+              <Text fw={600} c="gray.2">
+                Company
+              </Text>
               <Stack gap={6}>
-                <Anchor component={Link} to="/about" c="gray.4" size="sm">About</Anchor>
-                <Anchor component={Link} to="/contact" c="gray.4" size="sm">Contact</Anchor>
-                <Anchor href="https://calendly.com/andrew-andrewjayconsulting" target="_blank" rel="noopener noreferrer" c="gray.4" size="sm">Book a Call</Anchor>
+                <Anchor component={Link} to="/about" c="gray.4" size="sm">
+                  About
+                </Anchor>
+                <Anchor component={Link} to="/contact" c="gray.4" size="sm">
+                  Contact
+                </Anchor>
+                <Anchor
+                  href="https://calendly.com/andrew-andrewjayconsulting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  c="gray.4"
+                  size="sm"
+                >
+                  Book a Call
+                </Anchor>
               </Stack>
             </Stack>
           </Grid.Col>
@@ -81,9 +108,12 @@ const Footer: React.FC = () => {
         <Divider my="xl" color="gray.7" />
 
         <Group justify="space-between" align="center" py="md">
-          <Text size="sm" c="gray.5">&copy; {new Date().getFullYear()} Andrew Jay Consulting. All rights reserved.</Text>
+          <Text size="sm" c="gray.5">
+            &copy; {new Date().getFullYear()} Andrew Jay Consulting. All rights
+            reserved.
+          </Text>
           <Group gap="md">
-            <Anchor href="/" component={Link} to="/" c="gray.4" size="sm">
+            <Anchor component={Link} to="/" c="gray.4" size="sm">
               Home
             </Anchor>
             <Anchor component={Link} to="/services" c="gray.4" size="sm">
